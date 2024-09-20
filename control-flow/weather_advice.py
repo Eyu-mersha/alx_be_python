@@ -1,4 +1,4 @@
-answer = input("What's the weather like today? (sunny/rainy/cold):")
+answer = input("What's the weather like today? (sunny/rainy/cold):").lower()
 recommend = ""
 if answer == "sunny":
   recommend = "Wear a t-shirt and sunglasses."
