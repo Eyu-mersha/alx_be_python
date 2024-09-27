@@ -22,7 +22,7 @@ def calculate_future_date(days):
     """
     current_date = datetime.now()
     future_date = current_date + timedelta(days=days)
-    return future_date.strftime("%Y-%m-%d")
+    return future_date.strftime(" %Y-%m-%d " )
 
 def main():
     # Part 1: Display the Current Date and Time
