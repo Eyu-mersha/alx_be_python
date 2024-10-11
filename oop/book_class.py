@@ -9,3 +9,6 @@ class Book:
     
     def __str__(self):
         print("{self.title} by {self.author}, published in {self.year}")
+    def __repr__(self):
+        print(f"{name} is {age} years old.")
+   
