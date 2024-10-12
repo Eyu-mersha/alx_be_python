@@ -2,21 +2,21 @@ import hashlib
 import getpass
 users=[]
 class Credentials:
-    def __init__(self,username,password):
+    def __init__(self,name,username,password):
+        self.name = name
         self.username = username
         self.password = password 
     def __repr__(self):
-        return print(f"Username: {self.username} Password: {self.password}")
-    def createUser(username,password):
-        credential = Credentials(username,hash_password(password))
+        return print(f"name:{self.name} Username: {self.username} Password: {self.password}")
+    def createUser(name,username,password):
+        credential = Credentials(name,username,hash_password(password))
         users.append(credential)
         print("\n-------- Sign up successful.---------")
     def checkUser(username,password):
         for i in users:
             if username == i.username and hash_password(password)== i.password:
-                print("\n\n User Exists\n\n")
-                for i in users:
-                    i.__repr__()
+                print(f"\n\n Welcome to your Dashboard dear {i.name} \n\n")
+                
             else: 
                 print("------Wrong username or password")
                 
@@ -35,9 +35,10 @@ def login():
 def signUp():
     print("\n\n\n-------------------------Sign up form  -----------------------------\n\n")
     print("Submit the required information please")
+    name = input("Enter your name:  ")
     username = input("Enter your phone number:  ")
     password = getpass.getpass("Enter your password: ")
-    Credentials.createUser(username,password)
+    Credentials.createUser(name,username,password)
 
 
 print("\n\n\n-------------------------Welcome to Gulit Online Store-----------------------------\n\n")
